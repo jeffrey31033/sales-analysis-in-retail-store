@@ -21,8 +21,8 @@ Retail Data: The primary dataset used for analysis was sourced from Kagle, inclu
 At the first beginning, let's see the trends of total_sales given by different type of store. We can notice that the trends of type A and type B are quite similar, but the trend of type C is extremely different. 
 <br>
 <br>
-<img width="494" alt="Trends on Total Sales Given by Different Type of Store" src="https://github.com/jeffrey31033/sales-analysis-in-retail-store/assets/149200070/f2378b5a-0ed3-4b0b-a3d2-b2c06fdb8fcc">
-<br>
+<img width="494" alt="Trends on Total Sales Given by Different Type of Store" src="https://github.com/jeffrey31033/sales-analysis-in-retail-store/assets/149200070/700b0353-7bfb-4872-9bfd-f4e44e721541">
+
 
 ```r
 sales_with_store_type %>%
@@ -36,7 +36,8 @@ sales_with_store_type %>%
 Next, let's see whether any difference exists between sales on holidays and those on normal days given by different type of stores. You can discover that there is a difference between average sales on holidays and those on normal days in Type A and Type B stores. However, the average sales on holidays and normal days are quite similar in Type C store. 
 <br>
 <br>
-<img width="494" alt="Average Sales Differnence Betwen Holidays and Normal Days Given Store size" src="https://github.com/jeffrey31033/sales-analysis-in-retail-store/assets/149200070/8e70c78c-e205-4f3f-830e-b0be43c13db9">
+<img width="494" alt="Average Sales Differnence Betwen Holidays and Normal Days Given Store size" src="https://github.com/jeffrey31033/sales-analysis-in-retail-store/assets/149200070/234c60db-f07e-491a-83e0-7a2bcdb4187d">
+
 <br>
 
 ```r
