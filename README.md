@@ -121,10 +121,10 @@ sales_with_store_type %>%
          y = 'Difference between average sales between Holiday and Normal Day')
 ```
 
-Next, I want to understand whether the type of stores will have any impact on top 10 average sales given by departments. The result indiated that the top 10 sales of department of products are different given by the type of store. 
+Next, I would like to find out the top 10 products with the largest difference in sales volume between holidays and non-holidays given by type of stores. The result shows that difference exist among different type of stores. 
 <br>
 <br>
-<img width="460" alt="Top 10 Sales of Department Given by Different Type of Store" src="https://github.com/jeffrey31033/sales-analysis-in-retail-store/assets/149200070/245f41dc-8be0-4ffb-8700-23969f770577">
+<img width="603" alt="Top 10 Sales of Department Given by Different Type of Store" src="https://github.com/jeffrey31033/sales-analysis-in-retail-store/assets/149200070/b3c6d5d1-f3bc-438d-b111-b86c2c5ac266">
 
 ```r
 sales_with_store_type_dept_rank <- sales_with_store_type %>%
