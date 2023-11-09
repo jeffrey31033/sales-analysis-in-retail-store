@@ -124,7 +124,7 @@ sales_with_store_type %>%
 Next, I would like to find out the top 10 products with the largest difference in sales volume between holidays and non-holidays given by type of stores. The result shows that difference exist among different type of stores. 
 <br>
 <br>
-<img width="603" alt="Top 10 Sales of Department Given by Different Type of Store" src="https://github.com/jeffrey31033/sales-analysis-in-retail-store/assets/149200070/b3c6d5d1-f3bc-438d-b111-b86c2c5ac266">
+<img width="690" alt="Top 10 Sales of Department Given by Different Type of Store" src="https://github.com/jeffrey31033/sales-analysis-in-retail-store/assets/149200070/2bb554f8-cb23-4810-97e3-921b3e1536b6">
 
 ```r
 sales_with_store_type_dept_rank <- sales_with_store_type %>%
@@ -138,21 +138,62 @@ sales_with_store_type_dept_rank %>%
     ggplot(aes(x = Dept, y = mean_sales, fill = Type, label = mean_sales)) +
     geom_col() +
     geom_text(size = 3, position = position_stack(vjust = 0.5)) +
-    labs(title = "Top 10 Sales of Department Given by Different Type of Store")
+    labs(title = "Top 10 Department of Products with the largest difference in sales between holidays and non-holidays")
 ```
+
 <br> 
-The Top 10 department of products in Type A store
+Top 10 products with the largest difference in sales volume between holidays and non-holidays in Type A Store
 <br>
 <br>
-<img width="458" alt="Top 10 Department of Products in Type A Store" src="https://github.com/jeffrey31033/sales-analysis-in-retail-store/assets/149200070/1ac9c53a-d657-4fd7-b32c-04e630c801a3">
+<img width="690" alt="Top 10 Department of Products in Type A Store" src="https://github.com/jeffrey31033/sales-analysis-in-retail-store/assets/149200070/9d9be695-cd09-4369-82db-a2c316f1d363">
+
+<br>
+
+```r
+sales_with_store_type_dept_rank %>%
+    filter(Type == 'A') %>%
+    ggplot(aes(x = fct_rev(fct_reorder(Dept, mean_sales)), y = mean_sales)) + 
+    geom_col(fill = "darkgoldenrod2") +
+    labs(title = "Top 10 Department of Products with the largest difference in sales between holidays and non-holidays in Type A Store",
+         x = "Dept",
+         y= "Difference")
+```
+
+<br>
+Top 10 products with the largest difference in sales volume between holidays and non-holidays in Type B 
 <br>
 <br>
-The Top 10 department of products in Type B store
+<img width="692" alt="Top 10 Department of Products in Type B Store" src="https://github.com/jeffrey31033/sales-analysis-in-retail-store/assets/149200070/f1cc9f8c-405c-4039-a2d4-536b56122911">
 <br>
 <br>
-<img width="460" alt="Top 10 Department of Products in Type B Store" src="https://github.com/jeffrey31033/sales-analysis-in-retail-store/assets/149200070/05f41f1f-9d3d-4ee4-9e75-c011d91fd75f">
+
+```r
+sales_with_store_type_dept_rank %>%
+    filter(Type == 'B') %>%
+    ggplot(aes(x = fct_rev(fct_reorder(Dept, mean_sales)), y = mean_sales)) + 
+    geom_col(fill = "darkolivegreen4") +
+    labs(title = "Top 10 Department of Products with the largest difference in sales between holidays and non-holidays in Type B Store",
+         x = "Dept",
+         y = "Difference")
+```
+
+Top 10 products with the largest difference in sales volume between holidays and non-holidays in Type C
 <br>
 <br>
+<img width="688" alt="Top 10 Department of Products in Type C Store" src="https://github.com/jeffrey31033/sales-analysis-in-retail-store/assets/149200070/c5cc8d2f-f97a-4be4-bf71-ecfcf34e556a">
+<br>
+
+```r
+sales_with_store_type_dept_rank %>%
+    filter(Type == 'C') %>%
+    ggplot(aes(x = fct_rev(fct_reorder(Dept, mean_sales)), y = mean_sales)) + 
+    geom_col(fill = "cyan4") +
+    labs(title = "Top 10 Department of Products with the largest difference in sales between holidays and non-holidays in Type C Store",
+         x = "Dept",
+         y = "Difference")
+```
+
+
 
 
 
