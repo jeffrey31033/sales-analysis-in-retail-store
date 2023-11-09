@@ -187,6 +187,9 @@ sales_with_store_type_dept_rank %>%
          y = "Difference")
 ```
 
+<br>
+After discovering the insight related to holidays and non-holidays, I'm curious about the association between different markdown and weekly sales. 
+
 
 
 
