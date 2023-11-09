@@ -16,6 +16,8 @@ Retail Data: The primary dataset used for analysis was sourced from Kagle, inclu
 - R - Conducting Data Analysis 
 - Tableau - Visualizing Data
 
+---
+
 ### First Phase: Conduct Exploratory Data Analysis  
 
 At the first beginning, let's see the trends of total_sales given by different type of store. We can notice that the trends of type A and type B are quite similar, but the trend of type C is extremely different. 
