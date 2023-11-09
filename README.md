@@ -89,7 +89,7 @@ sales_with_store_type %>%
     labs(title = "Average Sales Betwen Holidays and Normal Days Given Store size")
 ```
 
-I'm curious about whether department will influence the average sales on holidays and normal days. In order to get the information, I, firstly, calculate the difference between sales on holidays and sales on normal days and select the departments whose differnece on average sales in different time period are Top 20. Secondly, I visualize the data and discover that departments will have impact on the average sales in different time period. 
+Futhermore, I'm curious about whether department will influence the average sales on holidays and normal days. In order to get the information, I, firstly, calculate the difference between sales on holidays and sales on normal days and select the departments whose differnece on average sales between holidays and normal days is in Top 20. Secondly, I visualize the data and discover that departments will have impact on the average sales in different time period. 
 <br>
 <br>
 <img width="465" alt="Difference between average sales between Holiday and Normal Day" src="https://github.com/jeffrey31033/sales-analysis-in-retail-store/assets/149200070/534885fa-48f3-48ac-a04e-cfe26e07a607">
@@ -111,3 +111,22 @@ sales_with_store_type %>%
          y = 'Difference between average sales between Holiday and Normal Day')
 ```
 
+Next, I want to understand whether type of store will have any impact on top 10 average sales given by departments. The result indiated that the top 10 sales of department are different given by the type of store. 
+<br>
+<br>
+<img width="460" alt="Top 10 Sales of Department Given by Different Type of Store" src="https://github.com/jeffrey31033/sales-analysis-in-retail-store/assets/149200070/245f41dc-8be0-4ffb-8700-23969f770577">
+
+```r
+sales_with_store_type_dept_rank <- sales_with_store_type %>%
+   group_by(Type, Dept) %>%
+   summarize(mean_sales = round(mean(Weekly_Sales),2)) %>%
+   arrange(Type, desc(mean_sales)) %>%
+   mutate(rank_sales = rank(desc(mean_sales))) %>%
+   filter(rank_sales %in% c(1:10))
+
+sales_with_store_type_dept_rank %>%
+    ggplot(aes(x = Dept, y = mean_sales, fill = Type, label = mean_sales)) +
+    geom_col() +
+    geom_text(size = 3, position = position_stack(vjust = 0.5)) +
+    labs(title = "Top 10 Sales of Department Given by Different Type of Store")
+```
