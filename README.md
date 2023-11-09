@@ -60,7 +60,10 @@ sales_with_store_type %>%
          y = 'avg_sales')
 ```
 <br>
-According to the pervious graphs, we can find that difference type of store may have impact on the average sales given by the date period. The discovery makes me curious about whether the other factors will influence the sales or not. Therefore, I decide to see whether the size of store will influence average sales or not. Firsty, I categorize the size of store into 3 categories, including LargeSize, MediumSize, and SmallSize, by utilizing ntile function.  
+According to the pervious graphs, we can find that difference type of store may have impact on the average sales given by the date period. The discovery makes me curious about whether the other factors will influence the sales or not. Therefore, I decide to see whether the size of store will influence average sales or not. Firsty, I categorize the size of store into 3 categories, including LargeSize, MediumSize, and SmallSize. The result shows that the size of stores may have impact on the average sales. The difference in average sales between holidays and normal days will increase if the size of stores increase. 
+<br>
+<br>
+<img width="467" alt="Average Sales Betwen Holidays and Normal Days Given Store size" src="https://github.com/jeffrey31033/sales-analysis-in-retail-store/assets/149200070/cb7b555f-d015-4ce1-aac3-d8e7b340b1c7">
 <br>
 
 ```r
@@ -81,16 +84,7 @@ sales_with_store_type <- sales_with_store_type %>%
     left_join(store_size_type, by = c("Store")) %>%
     select(-Size.y, -group_number) %>%
     rename(Size = Size.x)
-```
 
-Then, I use bar chart to see whether the size of store will influence average sales on holidays and normal days. The result shows that the size of stores may have impact on the average sales. The difference in average sales between holidays and normal days will increase if the size of stores increase. 
-<br>
-<br>
-<img width="467" alt="Average Sales Betwen Holidays and Normal Days Given Store size" src="https://github.com/jeffrey31033/sales-analysis-in-retail-store/assets/149200070/cb7b555f-d015-4ce1-aac3-d8e7b340b1c7">
-
-<br>
-
-```r
 sales_with_store_type %>%
     group_by(Size_Category, IsHoliday) %>%
     summarise(mean_sales = mean(Weekly_Sales, na.rm = TRUE)) %>%
