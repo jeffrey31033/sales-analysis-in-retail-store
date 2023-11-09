@@ -17,10 +17,15 @@ Retail Data: The primary dataset used for analysis was sourced from Kagle, inclu
 - Tableau - Visualizing Data
 
 ---
+### What's this analysis discovered?
+- The sales on holidays will be influenced by different types of stores
+- The sales on holidays will be influenced by defferent sizes of stores
+- The sales on holidays will be influenced by different department of products
+- Different Type of stores have different top 10 sales on holidays
+
 
 ### First Phase: Conduct Exploratory Data Analysis  
 
-#### What's this analysis discovered?
 
 At the first beginning, let's see the trends of total_sales given by different type of store. We can notice that the trends of type A and type B are quite similar, but the trend of type C is extremely different. 
 <br>
@@ -116,7 +121,7 @@ sales_with_store_type %>%
          y = 'Difference between average sales between Holiday and Normal Day')
 ```
 
-Next, I want to understand whether type of store will have any impact on top 10 average sales given by departments. The result indiated that the top 10 sales of department are different given by the type of store. 
+Next, I want to understand whether the type of stores will have any impact on top 10 average sales given by departments. The result indiated that the top 10 sales of department of products are different given by the type of store. 
 <br>
 <br>
 <img width="460" alt="Top 10 Sales of Department Given by Different Type of Store" src="https://github.com/jeffrey31033/sales-analysis-in-retail-store/assets/149200070/245f41dc-8be0-4ffb-8700-23969f770577">
@@ -135,3 +140,19 @@ sales_with_store_type_dept_rank %>%
     geom_text(size = 3, position = position_stack(vjust = 0.5)) +
     labs(title = "Top 10 Sales of Department Given by Different Type of Store")
 ```
+<br> 
+The Top 10 department of products in Type A store
+<br>
+<br>
+<img width="458" alt="Top 10 Department of Products in Type A Store" src="https://github.com/jeffrey31033/sales-analysis-in-retail-store/assets/149200070/1ac9c53a-d657-4fd7-b32c-04e630c801a3">
+<br>
+<br>
+The Top 10 department of products in Type B store
+<br>
+<br>
+<img width="460" alt="Top 10 Department of Products in Type B Store" src="https://github.com/jeffrey31033/sales-analysis-in-retail-store/assets/149200070/05f41f1f-9d3d-4ee4-9e75-c011d91fd75f">
+<br>
+<br>
+
+
+
