@@ -191,6 +191,10 @@ sales_with_store_type_dept_rank %>%
 
 ### Recommendation
 
+Since the type and size of store will strongly influence the sales on the holidays, the retail store should create different strategies for different stores. Futhermore, even though the sales on holidays and non-holidays will be different in a store, the difference may mainly come specific department of products, indicating that the store should focus on specific department of products rather than on all the products. According the result I just conducted, the recommendations are as follow:
+
+- 
+
 
 
 
